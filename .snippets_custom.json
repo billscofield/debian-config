@@ -1,0 +1,8 @@
+{
+    "html" : {
+        "snippets" : {
+            "meta:win": "<meta http-equiv=\"Content-Type\" content=\"text/html;charset=windows-1251\" />",
+            "meta:edge": "<meta http-equiv=\"X-UA-Compatible\" content=\"${1:ie=edge},${2:chrome=1}\" />"
+        }
+    }
+}
