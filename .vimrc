@@ -3,9 +3,13 @@ set et
 set ts=4
 set shiftwidth=4
 set hlsearch
-set nobackup
 "set smartindent
 colorscheme torte
+
+"禁止生成临时文件
+set nobackup
+set noswapfile
+
 
 set nocompatible
 filetype off
@@ -37,6 +41,8 @@ autocmd FileType html,css EmmetInstall
 Bundle 'pangloss/vim-javascript'
 
 Plugin 'Valloric/YouCompleteMe' 
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 
 Plugin 'marijnh/tern_for_vim'
 
@@ -54,6 +60,22 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
 " map <F2> :NERDTreeToggle<CR>
 
+
+Bundle 'scrooloose/nerdcommenter'
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+
+Plugin 'nathanaelkane/vim-indent-guides'
+" to have indent guides enabled by default
+let g:indent_guides_enable_on_vim_startup = 1
+" 从第2层开始可视化显示缩进
+let g:indent_guides_start_level=1
+" 色块宽度
+let g:indent_guides_guide_size=1
+
+
+
 Bundle 'majutsushi/tagbar'
 
 Plugin 'vim-airline/vim-airline'
@@ -69,6 +91,10 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mattn/webapi-vim'
 
 
+
+" Vue
+Plugin 'posva/vim-vue'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -81,15 +107,35 @@ set suffixes=.txt,.md,.js,.css
 
 "set omnifunc=javascriptcomplete#CompleteJS
 
+
 " 修改 ( 和 [ 的映射
 " imap ( ()<ESC>i
-imap { {}<ESC>i<CR><ESC>O
-
+" imap { {}<ESC>i<CR><ESC>O
+" 括号补全
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
 
 
 " 背景色透明
 "hi Normal ctermfg=252 ctermbg=none
 
+" 输入的命令显示出来，看的清楚些  
+set showcmd         
+
+
+" 允许折叠  
+set foldenable      
+" 手动折叠  
+set foldmethod=manual   
+
+let g:mapleader=";"
 
 " 自定义 emmet.vim 快捷键
-let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/.snippets_custom.json')), "\n"))
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.snippets_custom.json')), "\n"))
+
+
+let g:ycm_python_binary_path = 'python3'
