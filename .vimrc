@@ -4,7 +4,11 @@ set ts=4
 set shiftwidth=4
 set hlsearch
 "set smartindent
-colorscheme torte
+
+" 配色方案
+" https://github.com/tomasr/molokai
+colorscheme molokai
+
 
 "禁止生成临时文件
 set nobackup
@@ -33,7 +37,7 @@ Plugin 'mattn/emmet-vim'
 "let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-" Bundle 'jiangmiao/auto-pairs'
+Bundle 'jiangmiao/auto-pairs'
 
 
 "Plugin 'maksimr/vim-jsbeautify'
@@ -48,6 +52,9 @@ Plugin 'marijnh/tern_for_vim'
 
 
 Bundle 'vim-syntastic/syntastic'
+
+
+
 
 "Bundle 'tpope/vim-surround'
 
@@ -94,6 +101,9 @@ Plugin 'mattn/webapi-vim'
 
 " Vue
 Plugin 'posva/vim-vue'
+" autocmd FileType vue syntax sync fromstart
+" autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
 
 call vundle#end()
 
@@ -112,12 +122,12 @@ set suffixes=.txt,.md,.js,.css
 " imap ( ()<ESC>i
 " imap { {}<ESC>i<CR><ESC>O
 " 括号补全
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap < <><ESC>i
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
+" inoremap ( ()<ESC>i
+" inoremap [ []<ESC>i
+" inoremap { {}<ESC>i
+" inoremap ' ''<ESC>i
+" inoremap " ""<ESC>i
+" inoremap < <><ESC>i
 
 
 " 背景色透明
