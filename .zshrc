@@ -103,6 +103,9 @@ set -o vi
 
 # export PATH=/bin:/usr/bin:/usr/local/bin:$PATH
 
+# mate-screenshot alias
+alias shot='mate-screenshot'
+
 
 
 export NVM_DIR="$HOME/.nvm"

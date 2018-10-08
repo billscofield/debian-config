@@ -1,6 +1,22 @@
-remove control = Control_L                                                  
+remove control = Control_L
 remove mod1 = Alt_L
 keysym Control_L = Alt_L
 keysym Alt_L = Control_L
 add control = Control_L
 add mod1 = Alt_L
+
+! remove control = Control_L    修饰方法 = 处理方法
+! remove mod1 = Alt_L           修饰方法 = 处理方法
+! keysym Control_L = Alt_L      按键     = 处理方法
+! keysym Alt_L = Control_L      按键     = 处理方法
+! add control = Control_L       修饰方法 = 处理方法
+! add mod1 = Alt_L              修饰方法 = 处理方法
+
+
+! https://blog.csdn.net/robertsong2004/article/details/36439597
+! 键盘某键产生的信号是不可变的，就是我们后面会提到的 keycode 是不会变的。
+! 操作系统当中对不同信号设置的处理方法也是没法直接改变的
+! 唯一可以改变的，就是它们之间的映射关系。这也是 xmodmap 它要做的事。
+! 实际上，处理方法都是以整数表示的
+! 另外一种修改按键行为的方法是使用 keysym 来转换预定义的处理方法
+! 针对修饰键的处理，也是一个绑定的过程。具体一点，就是把一些处理方法绑定到特定的装饰方法当中
