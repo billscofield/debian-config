@@ -1,0 +1,4 @@
+set nu
+set et
+set ts=4
+set shiftwidth=4

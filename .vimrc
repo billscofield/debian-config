@@ -5,13 +5,15 @@ set shiftwidth=4
 set hlsearch
 "set smartindent
 
+syntax on
+
 " 突出显示光标的行和列
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 
 " 配色方案
 " https://github.com/tomasr/molokai
-colorscheme molokai
+"colorscheme molokai    #bill
 
 inoremap <C-s> <Esc>
 
@@ -28,7 +30,22 @@ set nrformats =
 set nocompatible
 filetype off
 
-set rtp+=/home/bill/.vim/bundle/Vundle.vim
+" Auto add head info
+" " .py file into add header
+function HeaderPython()
+    call setline(1, "# Author:\tBill Scofield ")
+    call append(1, "# Ctime:\t".strftime('%Y-%m-%d',localtime()))
+    "call append(2, "# Power by WenBin" . strftime('%Y-%m-%d %T', localtime()))
+    "call append(1, "# -*- coding: utf-8 -*-")
+    normal G
+    normal o
+    normal o
+endf
+autocmd bufnewfile *.py call HeaderPython()
+
+
+
+set rtp+=/root/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'VundleVim/Vundle.vim'
 
@@ -40,6 +57,7 @@ Bundle 'VundleVim/Vundle.vim'
 "let g:instant_markdown_autostart = 0
 
 "Plugin 'iamcco/markdown-preview.vim'
+"
 
 Plugin 'mattn/emmet-vim'
 "let g:user_emmet_expandabbr_key = '<Tab>'
@@ -55,6 +73,11 @@ Bundle 'jiangmiao/auto-pairs'
 Bundle 'pangloss/vim-javascript'
 
 Plugin 'Valloric/YouCompleteMe' 
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+
 "Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
 
@@ -72,15 +95,23 @@ Bundle 'vim-syntastic/syntastic'
 " ---
 
 Plugin 'scrooloose/nerdtree'
+let g:NERDTree_title="[NERDTree]" 
 " nerdTree快捷键映射
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=30
 " 显示行号
 let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
+" open a NERDTree automatically when vim starts up
+autocmd vimenter * NERDTree
+
+" 忽略以下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+
 
 " map a specific key or shortcut to open NERDTree
 nnoremap <F2> :NERDTreeToggle<CR>
+
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -97,17 +128,46 @@ Bundle 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
 
 
+
+"缩进插件1
 Plugin 'nathanaelkane/vim-indent-guides'
 " to have indent guides enabled by default
 let g:indent_guides_enable_on_vim_startup = 1
 " 从第2层开始可视化显示缩进
-let g:indent_guides_start_level=1
+let g:indent_guides_start_level=2
 " 色块宽度
 let g:indent_guides_guide_size=1
 
 
 
+"缩进线2
+"Bundle 'Yggdroot/indentLine'
+"let g:indentLine_color_term = 2
+
+" tagbar begin
 Bundle 'majutsushi/tagbar'
+"nmap <Leader>tb :TagbarToggle<CR> 不管用啊
+nmap <F8> :TagbarToggle<CR>
+" 启动时自动focus
+let g:tagbar_autofocus = 1
+"开启自动预览(随着光标在标签上的移动，顶部会出现一个实时的预览窗口)
+"let g:tagbar_autopreview = 1
+"关闭排序,即按标签本身在文件中的位置排序
+let g:tagbar_sort = 0
+" 能够和NERDTree在同一个列中
+let g:tagbar_vertical = 25
+
+"Possible values are:
+"0: Don't show any line numbers.
+"1: Show absolute line numbers.
+"2: Show relative line numbers.
+"-1: Use the global line number settings.
+
+let g:tagbar_show_linenumbers = 2
+
+
+" tagbar ends
+
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -124,12 +184,36 @@ Plugin 'mattn/webapi-vim'
 
 
 " Vue
-Plugin 'posva/vim-vue'
+" Plugin 'posva/vim-vue'
 " autocmd FileType vue syntax sync fromstart
 " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 " 成对标签之间的跳转
 Bundle 'vim-scripts/matchit.zip'
+
+
+" simpylfold python代码折叠
+Bundle 'tmhedberg/SimpylFold'
+let g:SimpylFold_docstring_preview = 1
+let g:SimpylFold_fold_import = 0
+
+
+"Bundle 'nvie/vim-flake8'
+"需要首先pip install autopep8
+Bundle 'tell-k/vim-autopep8'
+
+
+"Bundle 'Lokaltog/vim-easymotion'
+"map <Leader><Leader>l <Plug>(easymotion-lineforward)
+"map <Leader><Leader>j <Plug>(easymotion-j)
+"map <Leader><Leader>k <Plug>(easymotion-k)
+"map <Leader><Leader>h <Plug>(easymotion-linebackward)
+
+
+
+Plugin 'jlanzarotta/bufexplorer'
+
+
 
 call vundle#end()
 
@@ -192,10 +276,65 @@ nnoremap <leader>r :e %<cr>
 
 
 " 自定义 emmet.vim 快捷键
-let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.snippets_custom.json')), "\n"))
+"let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.snippets_custom.json')), "\n")) #bill
 
 
 let g:ycm_python_binary_path = 'python3'
 
 " 透明背景
 " hi Normal ctermfg=252 ctermbg=none
+
+
+"要支持PEP8风格的缩进，请在 .vimrc 文件中添加下面的代码：
+"autocmd FileType python exec ":call Pythonset()"
+"func Pythonset()
+"    set tabstop=8
+"    set softtabstop=4
+"    set shiftwidth=4
+"    set textwidth=79
+"    set expandtab
+"    set autoindent
+"    set fileformat=unix
+"endfunc
+
+
+
+
+" taglist
+"let Tlist_Auto_Open = 1                     "默认打开taglist
+"let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+
+"let Tlist_Show_One_File = 1
+"let Tlist_Exit_OnlyWindow = 1
+
+"当剩余的窗口都不是文件编辑窗口时，自动退出vim
+autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
+
+
+" ctags 和 taglist 自动更新
+function! UpdateCtags()
+    let curdir=getcwd()
+    while !filereadable("./tags")
+        cd ..
+        if getcwd() == "/"
+            break
+        endif
+    endwhile
+    if filewritable("./tags")
+        !ctags -R --file-scope=yes --langmap=c:+.h --languages=c,c++,Python --links=yes --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q
+        TlistUpdate
+    endif
+    execute ":cd " . curdir
+endfunction
+
+autocmd BufWritePost *.c,*.h,*.cpp call UpdateCtags()
+
+set tags+=/root/practise/ggg/tags
+
+
+
+
+
+
+
+
