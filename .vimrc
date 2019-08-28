@@ -77,6 +77,8 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
+"Plugin 'jsfaint/gen_tags.vim'
+
 
 "Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
@@ -278,8 +280,9 @@ nnoremap <leader>r :e %<cr>
 " 自定义 emmet.vim 快捷键
 "let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.snippets_custom.json')), "\n")) #bill
 
-
-let g:ycm_python_binary_path = 'python3'
+""" 需要更改
+"let g:ycm_python_binary_path = 'python3'
+let g:ycm_python_binary_path = '/root/practise/bin/python'
 
 " 透明背景
 " hi Normal ctermfg=252 ctermbg=none
@@ -327,14 +330,21 @@ function! UpdateCtags()
     execute ":cd " . curdir
 endfunction
 
-autocmd BufWritePost *.c,*.h,*.cpp call UpdateCtags()
-
-set tags+=/root/practise/ggg/tags
+autocmd BufWritePost *.c,*.h,*.cpp,*.py call UpdateCtags()
 
 
 
+"set tags+=/root/practise/ggg/tags
 
 
+set tags+=/root/c/11/tags
+
+
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+iabbrev thta that
+iabbrev ssig ------------- <cr>Bill Scofield<cr>billscofield@126.com
 
 
 

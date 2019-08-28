@@ -1,8 +1,10 @@
+echo "~/.zshrc"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/bill/.oh-my-zsh"
+  export ZSH="/root/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -96,6 +98,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rm='rm -i'
+alias rmf='rm -f'
+alias rmrf='rm -rf'
+alias cp='cp -i'
+alias mv='mv -i'
+##alias j = 'autojump'
 #
 #Bill vi
 set -o vi
@@ -113,4 +120,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 
-[[ -s /home/bill/.autojump/etc/profile.d/autojump.sh ]] && source /home/bill/.autojump/etc/profile.d/autojump.sh
+[[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh
+
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+eval "$(pyenv virtualenv-init -)"
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+export MYVIMRC=/root/.vimrc
