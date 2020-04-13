@@ -1,9 +1,12 @@
 set nu
+set relativenumber
 set et
 set ts=4
 set shiftwidth=4
 set hlsearch
 "set smartindent
+
+set autoindent
 
 syntax on
 
@@ -14,6 +17,8 @@ syntax on
 " 配色方案
 " https://github.com/tomasr/molokai
 "colorscheme molokai    #bill
+
+
 
 inoremap <C-s> <Esc>
 
@@ -72,9 +77,11 @@ Bundle 'jiangmiao/auto-pairs'
 
 Bundle 'pangloss/vim-javascript'
 
-Plugin 'Valloric/YouCompleteMe' 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"Plugin 'Valloric/YouCompleteMe' 
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
 
 
 "Plugin 'jsfaint/gen_tags.vim'
@@ -121,6 +128,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+" 启动NERDTree时显示书签
+let NERDTreeShowBookmarks = 1
+
 
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " ---
@@ -215,6 +227,9 @@ Bundle 'tell-k/vim-autopep8'
 
 Plugin 'jlanzarotta/bufexplorer'
 
+
+" coc.nvim补全
+Plugin 'neoclide/coc.nvim'
 
 
 call vundle#end()
