@@ -108,6 +108,9 @@ alias mv='mv -i'
 set -o vi
 #bind -m vi-insert '\c-l':clear-screen
 
+# to disable Ctrl s in terminal
+stty -ixon
+
 # export PATH=/bin:/usr/bin:/usr/local/bin:$PATH
 
 # mate-screenshot alias
@@ -137,6 +140,14 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-export PATH=$PATH:/usr/local/nodejs/node-v13.12.0-linux-x64/bin
+
+
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
+export GOPATH=/root/go/
+export GOBIN=/root/go/gitee.com/goyougoodthing/bin/
+
+export PATH=$PATH:/usr/local/nodejs/node-v13.12.0-linux-x64/bin:/opt/go/bin/
+
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
