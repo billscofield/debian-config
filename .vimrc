@@ -1,10 +1,12 @@
 set nu
-set relativenumber
+"set relativenumber
 set et
 set ts=4
 set shiftwidth=4
 set hlsearch
 "set smartindent
+
+set ignorecase
 
 set autoindent
 
@@ -20,7 +22,7 @@ syntax on
 
 
 
-inoremap <C-s> <Esc>
+inoremap <Cap> <Esc>
 
 "禁止生成临时文件
 set nobackup
@@ -34,6 +36,19 @@ set nrformats =
 
 set nocompatible
 filetype off
+
+function HeaderSh()
+    call setline(1, "#!/usr/bin/bash ")
+    call append(1, "# Author:\tBill Scofield ")
+    call append(2, "# Ctime:\t".strftime('%Y-%m-%d',localtime()))
+    call append(3, "# Description:\t")
+
+    normal G
+    normal o
+    normal o
+endf
+autocmd bufnewfile *.sh call HeaderSh()
+
 
 " Auto add head info
 " " .py file into add header
@@ -77,9 +92,9 @@ Bundle 'jiangmiao/auto-pairs'
 
 Bundle 'pangloss/vim-javascript'
 
-"Plugin 'Valloric/YouCompleteMe' 
-"let g:ycm_autoclose_preview_window_after_completion=1
-"map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+Plugin 'Valloric/YouCompleteMe' 
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 
@@ -141,6 +156,12 @@ Bundle 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
+
+" vim plugin for golang
+Plugin 'fatih/vim-go'
+let g:go_gopls_enabled = 0
+
+"Plugin 'Blackrush/vim-gocode'
 
 
 "缩进插件1
@@ -229,7 +250,7 @@ Plugin 'jlanzarotta/bufexplorer'
 
 
 " coc.nvim补全
-Plugin 'neoclide/coc.nvim'
+"Plugin 'neoclide/coc.nvim'
 
 
 call vundle#end()
@@ -353,6 +374,7 @@ autocmd BufWritePost *.c,*.h,*.cpp,*.py call UpdateCtags()
 
 
 set tags+=/root/c/11/tags
+set tags+=/root/python/python_tags
 
 
 nnoremap <leader>ev :split $MYVIMRC<cr>

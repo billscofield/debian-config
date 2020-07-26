@@ -1,9 +1,17 @@
 echo "~/.zshrc"
+
+
+
+
+
+
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/bill/.oh-my-zsh"
+  #export ZSH="/home/bill/.oh-my-zsh"
   export ZSH="/root/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -123,10 +131,7 @@ export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 
 [[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh
 
-autoload -U compinit && compinit -u
 
-
-export PATH=$PATH:/usr/sbin
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -137,7 +142,18 @@ eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 export MYVIMRC=/root/.vimrc
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
-export PATH=$PATH:/usr/local/nodejs/node-v13.12.0-linux-x64/bin
+
+
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
+export GOPATH=/root/go/
+export GOBIN=/root/go/gitee.com/goyougoodthing/bin/
+
+export PATH=$PATH:/opt/node-v12.16.3-linux-x64/bin/:/opt/go/bin/
+
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
