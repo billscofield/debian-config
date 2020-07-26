@@ -1,3 +1,5 @@
+" how to install bundle
+" git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
 set nu
 "set relativenumber
 set et
@@ -62,6 +64,17 @@ function HeaderPython()
     normal o
 endf
 autocmd bufnewfile *.py call HeaderPython()
+
+function Headersh()
+        call setline(1, "#!/usr/bin/bash")
+        call append(1, "# Author:\tBill Scofield ")
+        call append(2, "# Ctime:\t".strftime('%Y-%m-%d',localtime()))
+        normal G
+        normal o
+        normal o
+        endf
+        autocmd bufnewfile *.sh call Headersh()
+
 
 
 
