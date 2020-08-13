@@ -140,7 +140,7 @@ let NERDTreeWinSize=30
 let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
 " open a NERDTree automatically when vim starts up
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 
 " 忽略以下文件的显示
 let NERDTreeIgnore=['\.pyc','\~$','\.swp']
