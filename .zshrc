@@ -112,6 +112,8 @@ set -o vi
 stty -ixon
 
 # export PATH=/bin:/usr/bin:/usr/local/bin:$PATH
+#
+export PATH=$PATH:/usr/games/
 
 # mate-screenshot alias
 alias shot='mate-screenshot'

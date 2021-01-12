@@ -69,15 +69,19 @@ set rtp+=/root/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'VundleVim/Vundle.vim'
 
-"Plugin 'godlygeek/tabular'
-"Plugin 'plasticboy/vim-markdown'
+" 实现markdown 自动预览
+
+" Plugin 'godlygeek/tabular'
+" Plugin 'plasticboy/vim-markdown'
+
 
 "Plugin 'suan/vim-instant-markdown'
 "let g:mkdp_path_to_chrome="google-chrome"
 "let g:instant_markdown_autostart = 0
 
 "Plugin 'iamcco/markdown-preview.vim'
-"
+
+"----
 
 Plugin 'mattn/emmet-vim'
 "let g:user_emmet_expandabbr_key = '<Tab>'
@@ -127,7 +131,7 @@ let NERDTreeWinSize=30
 let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
 " open a NERDTree automatically when vim starts up
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 
 " 忽略以下文件的显示
 let NERDTreeIgnore=['\.pyc','\~$','\.swp']
@@ -172,6 +176,18 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level=2
 " 色块宽度
 let g:indent_guides_guide_size=1
+" # 设定基数列和偶数列的缩进线颜色
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=white ctermbg=white
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=red ctermbg=red
+
+
+
+
+
+"Plugin 'thaerkh/vim-indentguides'
+"let g:indentguides_spacechar = '┆'
+"let g:indentguides_tabchar = '|'
 
 
 
@@ -385,3 +401,9 @@ iabbrev ssig ------------- <cr>Bill Scofield<cr>billscofield@126.com
 
 
 
+if exists("did_load_filetypes")
+    finish
+endif
+augroup filetype detect
+    au! BufRead,BufNewFile *.tpp  setfiletype tpp
+augroup END
