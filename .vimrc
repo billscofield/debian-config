@@ -39,6 +39,19 @@ set nrformats =
 set nocompatible
 filetype off
 
+function HeaderSh()
+    call setline(1, "#!/usr/bin/bash ")
+    call append(1, "# Author:\tBill Scofield ")
+    call append(2, "# Ctime:\t".strftime('%Y-%m-%d',localtime()))
+    call append(3, "# Description:\t")
+
+    normal G
+    normal o
+    normal o
+endf
+autocmd bufnewfile *.sh call HeaderSh()
+
+
 " Auto add head info
 " " .py file into add header
 function HeaderPython()
