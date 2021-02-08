@@ -1,4 +1,6 @@
 " how to install bundle
+
+
 " git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
 set nu
 "set relativenumber
@@ -109,7 +111,7 @@ Bundle 'jiangmiao/auto-pairs'
 
 Bundle 'pangloss/vim-javascript'
 
-Plugin 'Valloric/YouCompleteMe' 
+Plugin 'ycm-core/YouCompleteMe' 
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -420,3 +422,7 @@ endif
 augroup filetype detect
     au! BufRead,BufNewFile *.tpp  setfiletype tpp
 augroup END
+
+
+
+
