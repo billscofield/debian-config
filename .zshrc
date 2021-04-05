@@ -136,6 +136,8 @@ autoload -U compinit && compinit -u
 
 export PATH=$PATH:/usr/sbin
 
+export PATH=$PATH:/usr/sbin:/usr/local/vim82python3/bin/
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"

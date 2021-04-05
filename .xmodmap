@@ -5,6 +5,14 @@ keysym Alt_L = Control_L
 add control = Control_L
 add mod1 = Alt_L
 
+
+remove mod4 = Super_L
+remove lock = Caps_Lock
+keysym Super_L = Caps_Lock
+keysym Caps_Lock = Super_L
+add mod4 = Caps_Lock
+add lock = Super_L
+
 ! remove control = Control_L    修饰方法 = 处理方法
 ! remove mod1 = Alt_L           修饰方法 = 处理方法
 ! keysym Control_L = Alt_L      按键     = 处理方法
