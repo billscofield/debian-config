@@ -1,7 +1,7 @@
 " how to install bundle
 " git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
 set nu
-"set relativenumber
+set relativenumber
 set et
 set ts=4
 set shiftwidth=4
@@ -20,7 +20,8 @@ syntax on
 
 " 配色方案
 " https://github.com/tomasr/molokai
-"colorscheme molokai    #bill
+"colorscheme molokai    
+colorscheme default
 
 
 
@@ -65,18 +66,6 @@ function HeaderPython()
 endf
 autocmd bufnewfile *.py call HeaderPython()
 
-function Headersh()
-        call setline(1, "#!/usr/bin/bash")
-        call append(1, "# Author:\tBill Scofield ")
-        call append(2, "# Ctime:\t".strftime('%Y-%m-%d',localtime()))
-        normal G
-        normal o
-        normal o
-        endf
-        autocmd bufnewfile *.sh call Headersh()
-
-
-
 
 set rtp+=/root/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -109,9 +98,9 @@ Bundle 'jiangmiao/auto-pairs'
 
 Bundle 'pangloss/vim-javascript'
 
-Plugin 'Valloric/YouCompleteMe' 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"Plugin 'Valloric/YouCompleteMe' 
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 
@@ -359,7 +348,7 @@ let g:ycm_python_binary_path = '/root/practise/bin/python'
 "    set tabstop=8
 "    set softtabstop=4
 "    set shiftwidth=4
-"    set textwidth=79
+"    set textwidth=80
 "    set expandtab
 "    set autoindent
 "    set fileformat=unix
@@ -390,7 +379,7 @@ function! UpdateCtags()
     endwhile
     if filewritable("./tags")
         !ctags -R --file-scope=yes --langmap=c:+.h --languages=c,c++,Python --links=yes --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q
-        TlistUpdate
+        :TlistUpdate
     endif
     execute ":cd " . curdir
 endfunction
@@ -398,12 +387,16 @@ endfunction
 autocmd BufWritePost *.c,*.h,*.cpp,*.py call UpdateCtags()
 
 
+set tags+=tags;
 
 "set tags+=/root/practise/ggg/tags
 
 
-set tags+=/root/c/11/tags
-set tags+=/root/python/python_tags
+set tags+=~/.vim/tags/python3.7.tags
+set tags+=~/.vim/tags/tags
+
+"set tags+=/root/c/11/tags
+"set tags+=/root/python/python_tags
 
 
 nnoremap <leader>ev :split $MYVIMRC<cr>
@@ -411,6 +404,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 iabbrev thta that
 iabbrev ssig ------------- <cr>Bill Scofield<cr>billscofield@126.com
+"iabbrev #Bill #Bill#
 
 
 
