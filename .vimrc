@@ -10,6 +10,11 @@ set shiftwidth=4
 set hlsearch
 "set smartindent
 
+set listchars=eol:¬
+set list
+
+
+
 set ignorecase
 
 set autoindent
