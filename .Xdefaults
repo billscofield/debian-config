@@ -1,0 +1,97 @@
+! transparency - true or false (default)
+# true 是完全透明
+#URxvt*transparent: true
+
+# 应该是滤镜
+# tint with any color; i.e., blue, red, tomato4, olivedrab2, etc.
+#   some nice listings are at:
+#     http://www.nisrv.com/drupal/?q=node/11
+#     http://www.htmlgoodies.com/tutorials/colors/article.php/3478921
+#URxvt*tintColor: green
+
+# shading - 0 to 99 darkens, 101 to 200 lightens.
+#   Don't use with tintColor; just use a darker or lighter color instead.
+#URxvt*shading: 40
+
+# scrollback buffer lines - 65535 is max on most machines (64 is default)
+URxvt*saveLines:12000
+
+
+URxvt.depth:32
+URxvt.colorBD:#Gray95
+
+
+URxvt*cursorBlink: false
+URxvt*cursorColor: #fff
+
+URxvt*geometry: 70x19
+
+
+## 复制粘贴
+#URxvt.clipboard.autocopy: false
+#URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+! URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+! URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+#URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+
+
+# 貌似不管用啊
+URxvt.keyboard-select.clipboard: true
+URxvt.keysym.M-s: perl:keyboard-select:activate
+URxvt.keysym.M-r: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+
+#----------------------------------------------------------------------
+
+
+# background color (prior to tinting) (default is white)
+# [NUM] NUM为透明度
+#URxvt*background: Blue
+URxvt.background:[70]#000000
+
+# font color (default is black)
+#URxvt*foreground: White
+URxvt.foreground:#ffffff
+
+# 貌似不管用啊
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+
+
+URxvt.url-select.underline: true
+URxvt.url-select.launcher: chromium
+
+
+
+URxvt*internalBorder:1
+URxvt*externalBorder:	-1
+
+# scrollbar - true (default) or false
+URxvt*scrollBar: true
+
+# scrollbar position - left=false (default) or right=true
+URxvt*scrollBar_right: true
+
+# scrollbar style - rxvt (default), plain, next, or xterm
+URxvt*scrollstyle: rxvt
+
+URxvt.scrollBar_floating:True
+
+
+
+! font set
+
+Xft.dpi:96
+URxvt.font:xft:Bitstream Vera Sans Mono-12,xft:Microsoft Yahei:pixelsize=16
+URxvt.boldFont:xft:Bitstream Vera Sans Mono-12:Bold,xft:Microsoft Yahei:pixelsize=16:Bold
+
+
+# Replace blue folder colors with a lighter shade for clarity. To
+#  set colored folders and files within urxvt, xterm, and aterm, add
+#  the following line to your ~/.bashrc ($HOME/.bashrc) file under
+#  the heading "# User specific aliases and functions":
+#   alias ls="ls -h --color=auto"
+URxvt*color4: RoyalBlue
+URxvt*color12: RoyalBlue

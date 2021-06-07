@@ -2,7 +2,7 @@
 
 
 " git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
-set nu
+" set nu
 set relativenumber
 set et
 set ts=4
@@ -13,6 +13,22 @@ set hlsearch
 set listchars=eol:¬
 set list
 
+
+
+" 中文断行
+"set formatoptions=tcqlnMm
+"
+" You can see them by :h fo-table
+"
+" m       Also break at a multi-byte character above 255.  This is useful for
+"         Asian text where every character is a word on its own.
+"
+" M       When joining lines, don't insert a space before or after a
+"         multi-byte
+"         character.  Overrules the 'B' flag.
+"
+" why it doesn't work? every time i open a file, the of is "tcq" again
+set formatoptions+=mM
 
 
 set ignorecase
@@ -44,7 +60,8 @@ set noswapfile
 set nrformats =
 
 
-set nocompatible
+"set nocompatible
+
 filetype off
 
 function HeaderSh()
