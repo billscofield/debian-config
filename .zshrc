@@ -122,6 +122,7 @@ export PATH=$PATH:/usr/games/
 # mate-screenshot alias
 alias shot='mate-screenshot'
 
+feh --bg-scale /root/Downloads/wp2118526-219-wallpapers.jpg
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -140,7 +141,7 @@ export PATH=$PATH:/usr/sbin:/usr/local/vim82python3/bin/
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 
 eval "$(pyenv virtualenv-init -)"
 

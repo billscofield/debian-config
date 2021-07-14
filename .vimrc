@@ -2,7 +2,7 @@
 
 
 " git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
-" set nu
+set nu
 set relativenumber
 set et
 set ts=4
@@ -124,6 +124,7 @@ Bundle 'pangloss/vim-javascript'
 
 Plugin 'ycm-core/YouCompleteMe' 
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_global_ycm_extra_conf='/root/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
