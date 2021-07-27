@@ -5,6 +5,14 @@ keysym Alt_L = Control_L
 add control = Control_L
 add mod1 = Alt_L
 
+
+remove mod4 = Super_L
+remove lock = Caps_Lock
+keysym Super_L = Caps_Lock
+keysym Caps_Lock = Super_L
+add mod4 = Caps_Lock
+add lock = Super_L
+
 ! remove control = Control_L    修饰方法 = 处理方法
 ! remove mod1 = Alt_L           修饰方法 = 处理方法
 ! keysym Control_L = Alt_L      按键     = 处理方法
@@ -25,9 +33,9 @@ add mod1 = Alt_L
 
 
 ! !一下配置的目的是为了更好地使用i3wm, i3wm 默认是 win 键 或者 alt 键，但是在 ~/.config/i3/config 中配置了 Mod = lock 后提示错误，只好如此先用着，待以>后找原因
-! clear lock
-! clear mod4
-! keycode 133 = Caps_Lock
-! keycode 66 = Super_L
-! add lock = Caps_Lock
-! add mod4 = Super_L
+clear lock
+clear mod4
+keycode 133 = Caps_Lock
+keycode 66 = Super_L
+add lock = Caps_Lock
+add mod4 = Super_L
