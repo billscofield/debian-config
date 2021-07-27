@@ -98,6 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rm='rm -i'
+alias sl='ls'
+alias lsl='ls'
+alias lls='ls'
 alias rmf='rm -f'
 alias rmrf='rm -rf'
 alias cp='cp -i'
