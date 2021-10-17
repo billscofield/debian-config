@@ -101,6 +101,7 @@ alias rm='rm -i'
 alias sl='ls'
 alias lsl='ls'
 alias lls='ls'
+alias lla='ls -la'
 alias l1='ls -1'
 alias rmf='rm -f'
 alias rmrf='rm -rf'
@@ -108,10 +109,20 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias vi='vim'
 ##alias j = 'autojump'
-#
+
 #Bill vi
 set -o vi
 #bind -m vi-insert '\c-l':clear-screen
+
+
+# keymap
+# scancodes(hex)    keycode
+setkeycodes db 58   # leftmeta to capslock
+setkeycodes 3a 125  # capslock to leftmeta
+setkeycodes 1d 56   # leftctrl to leftalt
+setkeycodes 38 29   # leftalt to leftctrl
+
+
 
 # to disable Ctrl s in terminal
 stty -ixon
@@ -123,7 +134,16 @@ export PATH=$PATH:/usr/games/
 # mate-screenshot alias
 alias shot='mate-screenshot'
 
-feh --bg-scale /root/Downloads/wp2118526-219-wallpapers.jpg
+#feh --bg-scale /root/Downloads/wp2118526-219-wallpapers.jpg
+feh --bg-scale /root/Downloads/nW3L1yZ-full-black-wallpaper.jpg
+
+
+export GTK_IM_MODULE=ibus
+export SDK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+#ibus-daemon -d -x
+# has to run ibus-daemon manually, 否则 urxvt 还是不能输入汉字
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -138,7 +158,7 @@ autoload -U compinit && compinit -u
 
 export PATH=$PATH:/usr/sbin
 
-export PATH=$PATH:/usr/sbin:/usr/local/vim82python3/bin/
+export PATH=/usr/sbin:/usr/local/vimPython3/bin/:$PATH
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -155,6 +175,7 @@ export MYVIMRC=/root/.vimrc
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 export GOPATH=/root/go/
 export GOBIN=/root/go/gitee.com/goyougoodthing/bin/
+export GOPROXY=https://mirrors.aliyun.com/goproxy/
 
 export PATH=$PATH:/usr/local/nodejs/node-v13.12.0-linux-x64/bin:/opt/go/bin/
 

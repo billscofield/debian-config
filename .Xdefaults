@@ -101,8 +101,13 @@ URxvt.scrollBar_floating:True
 ! font set
 
 Xft.dpi:96
-URxvt.font:xft:Bitstream Vera Sans Mono-9,xft:Microsoft Yahei:pixelsize=9
-URxvt.boldFont:xft:Bitstream Vera Sans Mono-9:Bold,xft:Microsoft Yahei:pixelsize=9:Bold
+!URxvt.font:xft:Bitstream Vera Sans Mono-9,xft:Microsoft Yahei:pixelsize=9
+URxvt.font:xft:Bitstream Vera Sans Mono-12:size=12,xft:Microsoft Yahei:pixelsize=14
+!URxvt.boldFont:xft:Bitstream Vera Sans Mono-9:Bold,xft:Microsoft Yahei:pixelsize=9:Bold
+URxvt.boldFont:xft:Bitstream Vera Sans Mono-12:Bold:size=12.5,xft:Microsoft Yahei:pixelsize=12:Bold
+
+!URxvt*font: xft: Font Mono:Semibold:size=12.5,xft:WenQuanYi Micro Hei Mono Light: size=12.5,xft:Font Awesome 5 Free:size=12.5
+!URxvt*boldFont:xft:SauceCodePro Nerd Font Mono:Semibold:size=12.5,xft:WenQuanYi Micro Hei Mono Light: size=12.5,xft:Font Awesome 5 Free:size=12.5
 
 
 !# Replace blue folder colors with a lighter shade for clarity. To
@@ -115,5 +120,11 @@ URxvt*color12: RoyalBlue
 
 
 
-#URxvt.inputMethod:Fcitx
-URxvt.inputMethod:ibus
+!URxvt.inputMethod:Fcitx
+!URxvt.inputMethod: IBus
+!input method
+urxvt.imFont:xft:Microsoft YaHei
+!URxvt.imfont:xft:Dejavu Sans Mono:size=9:antialias=True
+urxvt.imLocale: zh_CN.UTF-8
+urxvt.inputMethod:ibus
+urxvt.preeditType:OverTheSpot

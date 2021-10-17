@@ -35,7 +35,9 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec /usr/bin/urxvt
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -177,8 +179,9 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
         #status_command /liujiao/net-speed.sh
+        #tray_output primary
+        status_command i3status
 }
 
 #exec_always compton -b
@@ -187,11 +190,20 @@ bar {
 bindsym $mod+Shift+o exec i3lock-fancy
 
 # to set background wallpaper
-exec_always --no-startup-id feh --bg-fill "/root/Pictures/wallpaper/wonderwoman6.jpg"
+#exec_always --no-startup-id feh --bg-fill "/root/pictures/wallpaper/wonderwoman6.jpg"
+#exec_always --no-startup-id feh --bg-fill "/root/Downloads/wp10013307-mountain-climber-wallpapers.jpg"
 
 # to open chromium
 bindsym $mod+Shift+m exec chromium --no-sandbox
 
 
 exec --no-startup-id xautolock -time 1 -locker blurlock
+
+
+# network nm-applet
+exec --no-startup-id nm-applet
+
+
+# 电源管理
+exec --no-startup-id xset dpms 300 666
 

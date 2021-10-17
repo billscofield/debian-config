@@ -65,9 +65,9 @@ set nrformats =
 filetype off
 
 function HeaderSh()
-    call setline(1, "#!/usr/bin/bash ")
-    call append(1, "# Author:\tBill Scofield ")
-    call append(2, "# Ctime:\t".strftime('%Y-%m-%d',localtime()))
+    call setline(1, "#!/usr/bin/env bash")
+    call append(1, "# Author: Bill Scofield")
+    call append(2, "# Ctime : ".strftime('%Y-%m-%d',localtime()))
     call append(3, "# Description:\t")
 
     normal G
@@ -80,8 +80,10 @@ autocmd bufnewfile *.sh call HeaderSh()
 " Auto add head info
 " " .py file into add header
 function HeaderPython()
-    call setline(1, "# Author:\tBill Scofield ")
-    call append(1, "# Ctime:\t".strftime('%Y-%m-%d',localtime()))
+    call setline(1, "#!/usr/bin/env python3")
+    call append(1, "#coding:utf-8")
+    call append(2, "# Author: Bill Scofield")
+    call append(3, "# Ctime: ".strftime('%Y-%m-%d',localtime()))
     "call append(2, "# Power by WenBin" . strftime('%Y-%m-%d %T', localtime()))
     "call append(1, "# -*- coding: utf-8 -*-")
     normal G
@@ -360,8 +362,8 @@ nnoremap <leader>r :e %<cr>
 "let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.snippets_custom.json')), "\n")) #bill
 
 """ 需要更改
-"let g:ycm_python_binary_path = 'python3'
-let g:ycm_python_binary_path = '/root/practise/bin/python'
+let g:ycm_python_binary_path = 'python3'
+"let g:ycm_python_binary_path = '/root/practise/bin/python'
 
 " 透明背景
 " hi Normal ctermfg=252 ctermbg=none
