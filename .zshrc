@@ -97,10 +97,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls='ls --color=auto -F'
 alias rm='rm -i'
 alias sl='ls'
-alias lsl='ls'
-alias lls='ls'
+alias s='ls -lt'
+alias lsl='ls -l'
+alias ll='ls -l'
+alias lls='ll'
+alias lla='ll -a'
 alias rmf='rm -f'
 alias rmrf='rm -rf'
 alias cp='cp -i'
@@ -136,7 +140,7 @@ autoload -U compinit && compinit -u
 
 export PATH=$PATH:/usr/sbin
 
-export PATH=$PATH:/usr/sbin:/usr/local/vim82python3/bin/
+export PATH=$PATH:/usr/sbin:/usr/local/vimPython3/bin/
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -151,10 +155,21 @@ export MYVIMRC=/root/.vimrc
 
 
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
-export GOPATH=/root/go/
-export GOBIN=/root/go/gitee.com/goyougoodthing/bin/
 
-export PATH=$PATH:/usr/local/nodejs/node-v13.12.0-linux-x64/bin:/opt/go/bin/
+
+
+#export GOPATH=/root/go/
+#export GOBIN=/root/go/gitee.com/goyougoodthing/bin/
+export GOPATH=/opt/go/bin/
+export PATH=$PATH:${GOPATH}
+# internal speed-up
+export GOPROXY=https://mirrors.aliyun.com/goproxy/
+
+
+
+#export PATH=$PATH:/usr/local/nodejs/node-v13.12.0-linux-x64/bin:/opt/go/bin/
+export NODEPATH=/opt/node-v14.18.1-linux-x64/bin/
+export PATH=$PATH:${NODEPATH}
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:/usr/local/shell_self"
