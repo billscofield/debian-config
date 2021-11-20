@@ -97,14 +97,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls='ls --color=auto -F'
 alias rm='rm -i'
 alias ls='ls -F --color=auto'
 alias s='ls'
 alias sl='ls'
-alias lsl='ls'
-alias lls='ls'
-alias lla='ls -la'
-alias l1='ls -1'
+alias s='ls -lt'
+alias lsl='ls -l'
+alias ll='ls -l'
+alias lls='ll'
+alias lla='ll -a'
 alias rmf='rm -f'
 alias rmrf='rm -rf'
 alias cp='cp -i'
@@ -184,7 +186,20 @@ export GOPATH=/root/go/
 export GOBIN=/root/go/gitee.com/goyougoodthing/bin/
 export GOPROXY=https://mirrors.aliyun.com/goproxy/
 
-export PATH=$PATH:/usr/local/nodejs/node-v13.12.0-linux-x64/bin:/opt/go/bin/
+
+
+#export GOPATH=/root/go/
+#export GOBIN=/root/go/gitee.com/goyougoodthing/bin/
+export GOPATH=/opt/go/bin/
+export PATH=$PATH:${GOPATH}
+# internal speed-up
+export GOPROXY=https://mirrors.aliyun.com/goproxy/
+
+
+
+#export PATH=$PATH:/usr/local/nodejs/node-v13.12.0-linux-x64/bin:/opt/go/bin/
+export NODEPATH=/opt/node-v14.18.1-linux-x64/bin/
+export PATH=$PATH:${NODEPATH}
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:/usr/local/shell_self"
