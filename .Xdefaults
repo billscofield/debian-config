@@ -102,9 +102,9 @@ URxvt.scrollBar_floating:True
 
 Xft.dpi:96
 !URxvt.font:xft:Bitstream Vera Sans Mono-9,xft:Microsoft Yahei:pixelsize=9
-URxvt.font:xft:Bitstream Vera Sans Mono-12:size=12,xft:Microsoft Yahei:pixelsize=14
+URxvt.font:xft:Bitstream Vera Sans Mono-11:size=11,xft:Microsoft Yahei:pixelsize=12
 !URxvt.boldFont:xft:Bitstream Vera Sans Mono-9:Bold,xft:Microsoft Yahei:pixelsize=9:Bold
-URxvt.boldFont:xft:Bitstream Vera Sans Mono-12:Bold:size=12.5,xft:Microsoft Yahei:pixelsize=12:Bold
+URxvt.boldFont:xft:Bitstream Vera Sans Mono-11:Bold:size=11,xft:Microsoft Yahei:pixelsize=12:Bold
 
 !URxvt*font: xft: Font Mono:Semibold:size=12.5,xft:WenQuanYi Micro Hei Mono Light: size=12.5,xft:Font Awesome 5 Free:size=12.5
 !URxvt*boldFont:xft:SauceCodePro Nerd Font Mono:Semibold:size=12.5,xft:WenQuanYi Micro Hei Mono Light: size=12.5,xft:Font Awesome 5 Free:size=12.5

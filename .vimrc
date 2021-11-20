@@ -10,7 +10,8 @@ set shiftwidth=4
 set hlsearch
 "set smartindent
 
-set listchars=eol:¬
+"set listchars=eol:¬,tab:⍿·
+set listchars=eol:¬,tab:├─
 set list
 
 
@@ -95,7 +96,8 @@ autocmd bufnewfile *.py call HeaderPython()
 
 set rtp+=/root/.vim/bundle/Vundle.vim
 call vundle#begin()
-Bundle 'VundleVim/Vundle.vim'
+" Bundle 'VundleVim/Vundle.vim'
+Bundle 'https://gitee.com/billscofield/vundle.vim.git'
 
 " 实现markdown 自动预览
 
@@ -111,20 +113,24 @@ Bundle 'VundleVim/Vundle.vim'
 
 "----
 
-Plugin 'mattn/emmet-vim'
+"Plugin 'mattn/emmet-vim'
+Bundle 'https://gitee.com/billscofield/emmet-vim.git'
 "let g:user_emmet_expandabbr_key = '<Tab>'
 "let g:user_emmet_settings = {'indentation': '    '}
 "let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-Bundle 'jiangmiao/auto-pairs'
+"Bundle 'jiangmiao/auto-pairs'
+Bundle 'https://gitee.com/billscofield/auto-pairs'
 
 
 "Plugin 'maksimr/vim-jsbeautify'
 
-Bundle 'pangloss/vim-javascript'
+"Bundle 'pangloss/vim-javascript'
+Bundle 'https://gitee.com/billscofield/vim-javascript'
 
-Plugin 'ycm-core/YouCompleteMe' 
+"Plugin 'ycm-core/YouCompleteMe' 
+Bundle 'https://gitee.com/billscofield/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_global_ycm_extra_conf='/root/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -138,10 +144,12 @@ map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
 
-Plugin 'marijnh/tern_for_vim'
+"Plugin 'marijnh/tern_for_vim'
+Bundle 'https://gitee.com/billscofield/tern_for_vim'
 
 
-Bundle 'vim-syntastic/syntastic'
+"Bundle 'vim-syntastic/syntastic'
+Bundle 'https://gitee.com/billscofield/syntastic'
 
 
 " ---
@@ -151,7 +159,8 @@ Bundle 'vim-syntastic/syntastic'
 
 " ---
 
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
+Bundle 'https://gitee.com/billscofield/nerdtree'
 let g:NERDTree_title="[NERDTree]" 
 " nerdTree快捷键映射
 let NERDTreeWinPos='left'
@@ -182,23 +191,28 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowBookmarks = 1
 
 
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
+Bundle 'https://gitee.com/billscofield/nerdtree-git-plugin'
+
 " ---
 
-Bundle 'scrooloose/nerdcommenter'
+"Bundle 'scrooloose/nerdcommenter'
+Bundle 'https://gitee.com/billscofield/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
 
 " vim plugin for golang
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
+Bundle 'https://gitee.com/billscofield/vim-go'
 let g:go_gopls_enabled = 0
 
 "Plugin 'Blackrush/vim-gocode'
 
 
 "缩进插件1
-Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
+Bundle 'https://gitee.com/billscofield/vim-indent-guides'
 " to have indent guides enabled by default
 let g:indent_guides_enable_on_vim_startup = 1
 " 从第2层开始可视化显示缩进
@@ -225,7 +239,8 @@ let g:indent_guides_guide_size=1
 "let g:indentLine_color_term = 2
 
 " tagbar begin
-Bundle 'majutsushi/tagbar'
+"Bundle 'majutsushi/tagbar'
+Bundle 'https://gitee.com/billscofield/tagbar'
 "nmap <Leader>tb :TagbarToggle<CR> 不管用啊
 nmap <F8> :TagbarToggle<CR>
 " 启动时自动focus
@@ -249,17 +264,21 @@ let g:tagbar_show_linenumbers = 2
 " tagbar ends
 
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline'
+Bundle 'https://gitee.com/billscofiled/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+Bundle 'https://gitee.com/billscofield/vim-airline-themes'
 
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors'
+Bundle 'https://gitee.com/billscofield/vim-multiple-cursors'
 
 " 它可以让tmux的状态栏跟vim主题颜色一致
 " Plugin 'git://github.com/edkolev/tmuxline.vim.git'
 
 
 
-Plugin 'mattn/webapi-vim'
+"Plugin 'mattn/webapi-vim'
+Bundle 'https://gitee.com/billscofield/webapi-vim'
 
 
 
@@ -269,19 +288,21 @@ Plugin 'mattn/webapi-vim'
 " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 " 成对标签之间的跳转
-Bundle 'vim-scripts/matchit.zip'
+"Bundle 'vim-scripts/matchit.zip'
+Bundle 'https://gitee.com/billscofield/matchit.zip'
 
 
 " simpylfold python代码折叠
-Bundle 'tmhedberg/SimpylFold'
+"Bundle 'tmhedberg/SimpylFold'
+Bundle 'https://gitee.com/billscofield/SimpylFold'
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_import = 0
 
 
 "Bundle 'nvie/vim-flake8'
 "需要首先pip install autopep8
-Bundle 'tell-k/vim-autopep8'
-
+"Bundle 'tell-k/vim-autopep8'
+Bundle 'https://gitee.com/billscofield/vim-autopep8'
 
 "Bundle 'Lokaltog/vim-easymotion'
 "map <Leader><Leader>l <Plug>(easymotion-lineforward)
@@ -291,11 +312,16 @@ Bundle 'tell-k/vim-autopep8'
 
 
 
-Plugin 'jlanzarotta/bufexplorer'
-
+"Plugin 'jlanzarotta/bufexplorer'
+Bundle 'https://gitee.com/billscofield/bufexplorer'
 
 " coc.nvim补全
 "Plugin 'neoclide/coc.nvim'
+
+
+
+Bundle 'https://gitee.com/billscofield/taglist.git'
+
 
 
 call vundle#end()
@@ -419,8 +445,10 @@ set tags+=tags;
 "set tags+=/root/practise/ggg/tags
 
 
-set tags+=~/.vim/tags/python3.7.tags
-set tags+=~/.vim/tags/tags
+"set tags+=~/.vim/tags/python3.7.tags
+"set tags+=~/.vim/tags/tags
+set tags+=/root/.pyenv/versions/3.9.0/lib/python3.9/site-packages/flask/tags
+
 
 "set tags+=/root/c/11/tags
 "set tags+=/root/python/python_tags

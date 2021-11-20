@@ -117,12 +117,12 @@ set -o vi
 #bind -m vi-insert '\c-l':clear-screen
 
 
-# keymap
+# keymap only for tapboard
 # scancodes(hex)    keycode
-setkeycodes db 58   # leftmeta to capslock
-setkeycodes 3a 125  # capslock to leftmeta
-setkeycodes 1d 56   # leftctrl to leftalt
-setkeycodes 38 29   # leftalt to leftctrl
+#setkeycodes db 58   # leftmeta to capslock
+#setkeycodes 3a 125  # capslock to leftmeta
+#setkeycodes 1d 56   # leftctrl to leftalt
+#setkeycodes 38 29   # leftalt to leftctrl
 
 
 
@@ -197,3 +197,8 @@ export PATH=$PATH:${NODEPATH}
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:/usr/local/shell_self"
 
+
+
+
+# xterm
+xrdb -merge /git/debian-config/xtermconfig
