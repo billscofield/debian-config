@@ -122,7 +122,7 @@ set -o vi
 
 export LESSOPEN="|lesspipe %s"
 
-# keymap
+# keymap only for tapboard
 # scancodes(hex)    keycode
 # it seems like this doesn't work for usb keyboard
 #setkeycodes db 58   # leftmeta to capslock
@@ -206,3 +206,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:/
 
 # postman
 export PATH=${PATH}:/opt/Postman
+
+
+
+# xterm
+xrdb -merge /git/debian-config/xtermconfig

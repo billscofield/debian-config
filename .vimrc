@@ -10,7 +10,8 @@ set shiftwidth=4
 set hlsearch
 "set smartindent
 
-set listchars=eol:¬
+"set listchars=eol:¬,tab:⍿·
+set listchars=eol:¬,tab:├─
 set list
 
 
@@ -141,19 +142,12 @@ Bundle 'https://gitee.com/billscofield/auto-pairs'
 
 "Plugin 'maksimr/vim-jsbeautify'
 
-
-
-
-
 "Bundle 'pangloss/vim-javascript'
 Bundle 'https://gitee.com/billscofield/vim-javascript'
 
-
-
-
-
 "Plugin 'ycm-core/YouCompleteMe' 
-Plugin 'https://gitee.com/billscofield/YouCompleteMe' 
+Bundle 'https://gitee.com/billscofield/YouCompleteMe'
+
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_global_ycm_extra_conf='/root/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -168,7 +162,7 @@ map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "Plugin 'honza/vim-snippets'
 
 "Plugin 'marijnh/tern_for_vim'
-Plugin 'https://gitee.com/billscofield/tern_for_vim'
+Bundle 'https://gitee.com/billscofield/tern_for_vim'
 
 
 "Bundle 'vim-syntastic/syntastic'
@@ -182,11 +176,8 @@ Bundle 'https://gitee.com/billscofield/syntastic'
 
 " ---
 
-
-
-
 "Plugin 'scrooloose/nerdtree'
-Plugin 'https://gitee.com/billscofield/nerdtree'
+Bundle 'https://gitee.com/billscofield/nerdtree'
 let g:NERDTree_title="[NERDTree]" 
 " nerdTree快捷键映射
 let NERDTreeWinPos='left'
@@ -217,17 +208,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowBookmarks = 1
 
 
-
-
-
-
-
 "Plugin 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'https://gitee.com/billscofield/nerdtree-git-plugin'
 " ---
-
-
-
+"
 "Bundle 'scrooloose/nerdcommenter'
 Bundle 'https://gitee.com/billscofield/nerdcommenter'
 " Add spaces after comment delimiters by default
@@ -239,7 +223,7 @@ let g:NERDSpaceDelims = 1
 
 " vim plugin for golang
 "Plugin 'fatih/vim-go'
-Plugin 'https://gitee.com/billscofield/vim-go'
+Bundle 'https://gitee.com/billscofield/vim-go'
 let g:go_gopls_enabled = 0
 
 "Plugin 'Blackrush/vim-gocode'
@@ -250,7 +234,7 @@ let g:go_gopls_enabled = 0
 
 "缩进插件1
 "Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'https://gitee.com/billscofield/vim-indent-guides'
+Bundle 'https://gitee.com/billscofield/vim-indent-guides'
 " to have indent guides enabled by default
 let g:indent_guides_enable_on_vim_startup = 1
 " 从第2层开始可视化显示缩进
@@ -306,20 +290,14 @@ let g:tagbar_show_linenumbers = 2
 " tagbar ends
 
 
-
-
-
 "Plugin 'vim-airline/vim-airline'
-Plugin 'https://gitee.com/billscofiled/vim-airline'
+Bundle 'https://gitee.com/billscofiled/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
-Plugin 'https://gitee.com/billscofield/vim-airline-themes'
-
-
-
-
-
+Bundle 'https://gitee.com/billscofield/vim-airline-themes'
 "Plugin 'terryma/vim-multiple-cursors'
-Plugin 'https://gitee.com/billscofield/vim-multiple-cursors'
+Bundle 'https://gitee.com/billscofield/vim-multiple-cursors'
+
+
 
 " 它可以让tmux的状态栏跟vim主题颜色一致
 " Plugin 'git://github.com/edkolev/tmuxline.vim.git'
@@ -327,7 +305,7 @@ Plugin 'https://gitee.com/billscofield/vim-multiple-cursors'
 
 
 "Plugin 'mattn/webapi-vim'
-Plugin 'https://gitee.com/billscofield/webapi-vim'
+Bundle 'https://gitee.com/billscofield/webapi-vim'
 
 
 
@@ -369,7 +347,6 @@ let g:SimpylFold_fold_import = 0
 "Bundle 'tell-k/vim-autopep8'
 Bundle 'https://gitee.com/billscofield/vim-autopep8'
 
-
 "Bundle 'Lokaltog/vim-easymotion'
 "map <Leader><Leader>l <Plug>(easymotion-lineforward)
 "map <Leader><Leader>j <Plug>(easymotion-j)
@@ -379,11 +356,16 @@ Bundle 'https://gitee.com/billscofield/vim-autopep8'
 
 
 "Plugin 'jlanzarotta/bufexplorer'
-Plugin 'https://gitee.com/billscofield/bufexplorer'
+Bundle 'https://gitee.com/billscofield/bufexplorer'
 
 
 " coc.nvim补全
 "Plugin 'neoclide/coc.nvim'
+
+
+
+Bundle 'https://gitee.com/billscofield/taglist.git'
+
 
 
 call vundle#end()
@@ -506,6 +488,10 @@ autocmd BufWritePost *.c,*.h,*.cpp,*.py call UpdateCtags()
 
 set tags+=tags;
 
+
+"set tags+=~/.vim/tags/python3.7.tags
+"set tags+=~/.vim/tags/tags
+set tags+=/root/.pyenv/versions/3.9.0/lib/python3.9/site-packages/flask/tags
 
 set tags+=~/.vim/tags/python3.9.tags
 set tags+=/root/.pyenv/versions/3.9.7/envs/flask/lib/python3.9/site-packages/tags
