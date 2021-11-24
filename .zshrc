@@ -99,6 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='ls --color=auto -F'
 alias rm='rm -i'
+alias ls='ls -F --color=auto'
+alias s='ls'
 alias sl='ls'
 alias s='ls -lt'
 alias lsl='ls -l'
@@ -115,10 +117,14 @@ alias vi='vim'
 #Bill vi
 set -o vi
 #bind -m vi-insert '\c-l':clear-screen
+#
+#less preprocessor to handle deb
 
+export LESSOPEN="|lesspipe %s"
 
 # keymap only for tapboard
 # scancodes(hex)    keycode
+# it seems like this doesn't work for usb keyboard
 #setkeycodes db 58   # leftmeta to capslock
 #setkeycodes 3a 125  # capslock to leftmeta
 #setkeycodes 1d 56   # leftctrl to leftalt
@@ -137,13 +143,14 @@ export PATH=$PATH:/usr/games/
 alias shot='mate-screenshot'
 
 #feh --bg-scale /root/Downloads/wp2118526-219-wallpapers.jpg
-feh --bg-scale /root/Downloads/nW3L1yZ-full-black-wallpaper.jpg
+feh --bg-max /root/Downloads/nW3L1yZ-full-black-wallpaper.jpg
 
 
 export GTK_IM_MODULE=ibus
-export SDK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+#export SDK_IM_MODULE=ibus
+
 #ibus-daemon -d -x
 # has to run ibus-daemon manually, 否则 urxvt 还是不能输入汉字
 
