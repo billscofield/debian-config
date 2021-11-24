@@ -204,3 +204,5 @@ export PATH=$PATH:${NODEPATH}
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:/usr/local/shell_self"
 
+# postman
+export PATH=${PATH}:/opt/Postman

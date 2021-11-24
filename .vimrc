@@ -346,6 +346,12 @@ Bundle 'https://gitee.com/billscofield/matchit.zip'
 
 
 
+" jinja
+"Bundle 'https://gitee.com/billscofield/vim-jinja'
+
+
+" jinja2
+Bundle 'https://gitee.com/billscofield/Vim-Jinja2-Syntax'
 
 
 " simpylfold python代码折叠
@@ -467,11 +473,13 @@ let g:ycm_python_binary_path = 'python3'
 
 
 " taglist
-"let Tlist_Auto_Open = 1                     "默认打开taglist
-"let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+"默认打开taglist
+let Tlist_Auto_Open = 1
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 
-"let Tlist_Show_One_File = 1
-"let Tlist_Exit_OnlyWindow = 1
+" 不同时显示多个文件的 tag, 只显示当前文件的
+let Tlist_Show_One_File = 1 
+let Tlist_Exit_OnlyWindow = 1
 
 "当剩余的窗口都不是文件编辑窗口时，自动退出vim
 autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
@@ -498,22 +506,21 @@ autocmd BufWritePost *.c,*.h,*.cpp,*.py call UpdateCtags()
 
 set tags+=tags;
 
-"set tags+=/root/practise/ggg/tags
-
 
 set tags+=~/.vim/tags/python3.9.tags
-set tags+=~/.vim/tags/tags
+set tags+=/root/.pyenv/versions/3.9.7/envs/flask/lib/python3.9/site-packages/tags
+" 系统函数库 在 debianinit.sh 中有命令
+set tags+=~/.vim/tags/systags
 
-"set tags+=/root/c/11/tags
-"set tags+=/root/python/python_tags
+
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-iabbrev thta that
+"iabbrev thta that
 iabbrev ssig ------------- <cr>Bill Scofield<cr>billscofield@126.com
-"iabbrev #Bill #Bill#
 
 
 
