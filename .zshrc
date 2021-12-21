@@ -82,6 +82,9 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+#
+# systemctl edit --full
+export SYSTEMD_EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -209,3 +212,10 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:/
 
 # xterm
 xrdb -merge /git/debian-config/xtermconfig
+
+
+
+# qt
+export QTDIR=/opt/Qt/5.9.9/
+export PATH=$QTDIR/gcc_64/bin/:$PATH
+export LD_LIBRARY_PATH=$QTDIR/gcc_64/lib/:$LD_LIBRARY_PATH

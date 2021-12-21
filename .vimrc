@@ -449,10 +449,10 @@ let g:ycm_python_binary_path = 'python3'
 
 
 " taglist
-"let Tlist_Auto_Open = 1                     "默认打开taglist
-"let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Auto_Open = 1                     "默认打开taglist
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 
-"let Tlist_Show_One_File = 1
+let Tlist_Show_One_File = 1
 "let Tlist_Exit_OnlyWindow = 1
 
 "当剩余的窗口都不是文件编辑窗口时，自动退出vim
@@ -486,6 +486,9 @@ set tags+=tags;
 "set tags+=~/.vim/tags/python3.7.tags
 "set tags+=~/.vim/tags/tags
 set tags+=/root/.pyenv/versions/3.9.0/lib/python3.9/site-packages/flask/tags
+
+" nump matplotlib
+set tags+=/root/.pyenv/versions/3.9.0/envs/data/lib/python3.9/site-packages/tags
 
 set tags+=~/.vim/tags/python3.9.tags
 set tags+=~/.vim/tags/tags
