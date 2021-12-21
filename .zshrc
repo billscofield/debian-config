@@ -112,6 +112,7 @@ alias rmrf='rm -rf'
 alias cp='cp -i'
 alias mv='mv -i'
 alias vi='vim'
+alias viu='vim -u NONE'
 ##alias j = 'autojump'
 
 #Bill vi
