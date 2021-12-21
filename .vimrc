@@ -493,6 +493,9 @@ set tags+=tags;
 "set tags+=~/.vim/tags/tags
 set tags+=/root/.pyenv/versions/3.9.0/lib/python3.9/site-packages/flask/tags
 
+" nump matplotlib
+set tags+=/root/.pyenv/versions/3.9.0/envs/data/lib/python3.9/site-packages/tags
+
 set tags+=~/.vim/tags/python3.9.tags
 set tags+=/root/.pyenv/versions/3.9.7/envs/flask/lib/python3.9/site-packages/tags
 set tags+=/root/.pyenv/versions/3.9.7/envs/datamine/lib/python3.9/site-packages/tags
