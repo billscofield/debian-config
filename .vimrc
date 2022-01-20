@@ -46,6 +46,7 @@ syntax on
 " https://github.com/tomasr/molokai
 "colorscheme molokai    
 colorscheme default
+hi Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 
 
 
@@ -520,7 +521,4 @@ endif
 augroup filetype detect
     au! BufRead,BufNewFile *.tpp  setfiletype tpp
 augroup END
-
-
-
 

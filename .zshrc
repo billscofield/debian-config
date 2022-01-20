@@ -141,10 +141,10 @@ stty -ixon
 
 # export PATH=/bin:/usr/bin:/usr/local/bin:$PATH
 #
-export PATH=$PATH:/usr/games/
+# export PATH=$PATH:/usr/games/
 
 # mate-screenshot alias
-alias shot='mate-screenshot'
+# alias shot='mate-screenshot'
 
 #feh --bg-scale /root/Downloads/wp2118526-219-wallpapers.jpg
 feh --bg-max /root/Downloads/nW3L1yZ-full-black-wallpaper.jpg
@@ -186,9 +186,9 @@ export MYVIMRC=/root/.vimrc
 
 
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
-export GOPATH=/root/go/
-export GOBIN=/root/go/gitee.com/goyougoodthing/bin/
-export GOPROXY=https://mirrors.aliyun.com/goproxy/
+#export GOPATH=/root/go/
+#export GOBIN=/root/go/gitee.com/goyougoodthing/bin/
+#export GOPROXY=https://mirrors.aliyun.com/goproxy/
 
 
 
@@ -214,11 +214,13 @@ export PATH=${PATH}:/opt/Postman
 
 
 # xterm
-xrdb -merge /git/debian-config/xtermconfig
+# xrdb -merge /git/debian-config/xtermconfig
 
 
 
 # qt
-export QTDIR=/opt/Qt/5.9.9/
-export PATH=$QTDIR/gcc_64/bin/:$PATH
-export LD_LIBRARY_PATH=$QTDIR/gcc_64/lib/:$LD_LIBRARY_PATH
+export QTVER=6.2.2
+export QTDIR=/opt/Qt/
+export PATH=${QTDIR}${QTVER}/gcc_64/bin/:$PATH
+export PATH=${QTDIR}Tools/QtCreator/bin/:$PATH
+export LD_LIBRARY_PATH=${QTDIR}${QTVER}/gcc_64/lib/:$LD_LIBRARY_PATH
