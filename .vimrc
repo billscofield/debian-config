@@ -16,7 +16,7 @@ set list
 
 
 " highlight search color
-hi Search term=standout ctermfg=0 ctermbg=3
+" hi Search term=standout ctermfg=0 ctermbg=3
 
 
 " 中文断行
