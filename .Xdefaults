@@ -17,9 +17,8 @@ URxvt*shading: 40
 URxvt*saveLines:12000
 
 
-URxvt.depth:32
-URxvt.colorBD:#Gray95
-
+URxvt.depth: 32
+URxvt.colorBD: #Gray95
 
 URxvt*cursorBlink: false
 URxvt*cursorColor: #fff
@@ -121,8 +120,8 @@ URxvt*color12: RoyalBlue
 !URxvt.inputMethod:Fcitx
 URxvt.inputMethod: IBus
 !input method
-urxvt.imFont:xft:Microsoft YaHei
+urxvt.imFont: xft:Microsoft YaHei
 !URxvt.imfont:xft:Dejavu Sans Mono:size=9:antialias=True
 urxvt.imLocale: zh_CN.UTF-8
 !urxvt.inputMethod:ibus
-urxvt.preeditType:OverTheSpot
+urxvt.preeditType: OverTheSpot

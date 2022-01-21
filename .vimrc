@@ -15,6 +15,9 @@ set listchars=eol:¬,tab:├─
 set list
 
 
+" highlight search color
+" hi Search term=standout ctermfg=0 ctermbg=3
+
 
 "inoremap ,, <ESC>la
 "inoremap .. <ESC>A;
@@ -51,6 +54,7 @@ set cursorline
 " https://github.com/tomasr/molokai
 "colorscheme molokai    
 colorscheme default
+hi Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 
 
 
@@ -503,6 +507,7 @@ set tags+=/root/.pyenv/versions/3.9.0/envs/data/lib/python3.9/site-packages/tags
 
 set tags+=~/.vim/tags/python3.9.tags
 set tags+=/root/.pyenv/versions/3.9.7/envs/flask/lib/python3.9/site-packages/tags
+set tags+=/root/.pyenv/versions/3.9.7/envs/datamine/lib/python3.9/site-packages/tags
 " 系统函数库 在 debianinit.sh 中有命令
 set tags+=~/.vim/tags/systags
 
@@ -524,7 +529,4 @@ endif
 augroup filetype detect
     au! BufRead,BufNewFile *.tpp  setfiletype tpp
 augroup END
-
-
-
 
