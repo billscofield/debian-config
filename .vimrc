@@ -19,6 +19,11 @@ set list
 " hi Search term=standout ctermfg=0 ctermbg=3
 
 
+"inoremap ,, <ESC>la
+"inoremap .. <ESC>A;
+
+
+
 " 中文断行
 "set formatoptions=tcqlnMm
 "
@@ -42,7 +47,7 @@ set autoindent
 syntax on
 
 " 突出显示光标的行和列
-"set cursorline
+set cursorline
 "set cursorcolumn
 
 " 配色方案
