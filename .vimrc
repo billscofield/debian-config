@@ -377,6 +377,14 @@ Bundle 'https://gitee.com/billscofield/taglist.git'
 
 
 
+
+" gitgutter
+Bundle 'https://gitee.com/billscofield/vim-gitgutter.git'
+
+" git -> fugitive
+Bundle 'https://gitee.com/billscofield/vim-fugitive.git'
+
+
 call vundle#end()
 
 filetype plugin indent on
