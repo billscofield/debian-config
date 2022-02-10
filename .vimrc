@@ -14,6 +14,10 @@ set hlsearch
 set listchars=eol:¬,tab:├─
 set list
 
+set wildmenu
+set wildmode=full
+
+set hidden
 
 " highlight search color
 " hi Search term=standout ctermfg=0 ctermbg=3
@@ -22,6 +26,7 @@ set list
 "inoremap ,, <ESC>la
 "inoremap .. <ESC>A;
 
+set suffixesadd+=.py,.c,.cpp
 
 
 " 中文断行
@@ -376,6 +381,7 @@ Bundle 'https://gitee.com/billscofield/bufexplorer'
 Bundle 'https://gitee.com/billscofield/taglist.git'
 
 
+Bundle 'https://gitee.com/billscofield/vim-surround.git'
 
 call vundle#end()
 
