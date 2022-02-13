@@ -1,32 +1,75 @@
-" how to install bundle
+" how to install bundle;
 
 
-" git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
+" git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim;
+
+
 set nu
 set relativenumber
-set et
-set ts=4
-set shiftwidth=4
-set hlsearch
-"set smartindent
 
+set expandtab
+set tabstop=4
+set shiftwidth=4
+" 不要设置 softtabstop, 这样导致 space 和 tab 混用，有些费解, 还容易出 bug
+
+"set smartindent
+set autoindent
+
+set ignorecase
+
+
+set nobackup
+set noswapfile
+set nrformats=
+
+
+"filetype off
+filetype plugin indent on
+
+
+"set nocompatible
+
+
+syntax on
+
+
+" 在插入模式下使用系统粘贴命令时的行为改变
+set pastetoggle=<f5>
+
+
+" 突出显示光标的行和列
+set cursorline
+"set cursorcolumn
+"
+"
 "set listchars=eol:¬,tab:⍿·
 set listchars=eol:¬,tab:├─
 set list
 
+
+set hlsearch
+" highlight search color
+" hi Search term=standout ctermfg=0 ctermbg=3
+set incsearch
+
+
 set wildmenu
 set wildmode=full
 
+" 缓冲区列表，参数列表
 set hidden
-
-" highlight search color
-" hi Search term=standout ctermfg=0 ctermbg=3
 
 
 "inoremap ,, <ESC>la
 "inoremap .. <ESC>A;
 
+
 set suffixesadd+=.py,.c,.cpp
+
+
+" what are the differences? vim 中silent 调用外部命令后，屏幕空白，为啥呢
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+"nnoremap  <C-l> :<C-u>nohlsearch<CR><C-l>
 
 
 " 中文断行
@@ -45,16 +88,6 @@ set suffixesadd+=.py,.c,.cpp
 set formatoptions+=mM
 
 
-set ignorecase
-
-set autoindent
-
-syntax on
-
-" 突出显示光标的行和列
-set cursorline
-"set cursorcolumn
-
 " 配色方案
 " https://github.com/tomasr/molokai
 "colorscheme molokai    
@@ -62,29 +95,14 @@ colorscheme default
 hi Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 
 
-
 inoremap <Cap> <Esc>
 
-"禁止生成临时文件
-set nobackup
-set noswapfile
-
-" 八进制当成十进制
-" 缺省为 "octal,hex"
-" alpha:单个字母会被递增和递减。这可以用于使用字母索引的列表a)、b)，等等。
-set nrformats =
-
-
-"set nocompatible
-
-filetype off
 
 function HeaderSh()
     call setline(1, "#!/usr/bin/env bash")
     call append(1, "# Author: Bill Scofield")
     call append(2, "# Ctime : ".strftime('%Y-%m-%d',localtime()))
     call append(3, "# Description:\t")
-
     normal G
     normal o
     normal o
@@ -92,15 +110,12 @@ endf
 autocmd bufnewfile *.sh call HeaderSh()
 
 
-" Auto add head info
-" " .py file into add header
 function HeaderPython()
     call setline(1, "#!/usr/bin/env python3")
     call append(1, "#coding:utf-8")
     call append(2, "# Author: Bill Scofield")
     call append(3, "# Ctime: ".strftime('%Y-%m-%d',localtime()))
-    "call append(2, "# Power by WenBin" . strftime('%Y-%m-%d %T', localtime()))
-    "call append(1, "# -*- coding: utf-8 -*-")
+    call append(4, "# Description:\t")
     normal G
     normal o
     normal o
@@ -115,20 +130,21 @@ set rtp+=/root/.vim/bundle/Vundle.vim
 " apt-cache show vim-scripts
 
 
+
+
+
+
+
+
 call vundle#begin()
 "Bundle 'VundleVim/Vundle.vim'
 Bundle 'https://gitee.com/billscofield/vundle.vim.git'
 
 
-
 " align from vim-scripts
 
 
-
-
-
 " 实现markdown 自动预览
-
 " Plugin 'godlygeek/tabular'
 " Plugin 'plasticboy/vim-markdown'
 
@@ -136,6 +152,7 @@ Bundle 'https://gitee.com/billscofield/vundle.vim.git'
 "Plugin 'suan/vim-instant-markdown'
 "let g:mkdp_path_to_chrome="google-chrome"
 "let g:instant_markdown_autostart = 0
+
 
 "Plugin 'iamcco/markdown-preview.vim'
 
@@ -149,31 +166,28 @@ Bundle 'https://gitee.com/billscofield/emmet-vim'
 autocmd FileType html,css EmmetInstall
 
 
-
 "Bundle 'jiangmiao/auto-pairs'
 Bundle 'https://gitee.com/billscofield/auto-pairs'
 
 
 "Plugin 'maksimr/vim-jsbeautify'
 
+
 "Bundle 'pangloss/vim-javascript'
 Bundle 'https://gitee.com/billscofield/vim-javascript'
 
+
 "Plugin 'ycm-core/YouCompleteMe' 
 Bundle 'https://gitee.com/billscofield/YouCompleteMe'
-
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_global_ycm_extra_conf='/root/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
-
-
 "Plugin 'jsfaint/gen_tags.vim'
-
-
 "Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
+
 
 "Plugin 'marijnh/tern_for_vim'
 Bundle 'https://gitee.com/billscofield/tern_for_vim'
@@ -183,12 +197,9 @@ Bundle 'https://gitee.com/billscofield/tern_for_vim'
 Bundle 'https://gitee.com/billscofield/syntastic'
 
 
-" ---
-
-
 "Bundle 'tpope/vim-surround'
+Bundle 'https://gitee.com/billscofield/vim-surround.git'
 
-" ---
 
 "Plugin 'scrooloose/nerdtree'
 Bundle 'https://gitee.com/billscofield/nerdtree'
@@ -222,17 +233,16 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowBookmarks = 1
 
 
+
+
 "Plugin 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'https://gitee.com/billscofield/nerdtree-git-plugin'
-" ---
-"
+
+
 "Bundle 'scrooloose/nerdcommenter'
 Bundle 'https://gitee.com/billscofield/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
-
-
-
 
 
 " vim plugin for golang
@@ -240,10 +250,8 @@ let g:NERDSpaceDelims = 1
 Bundle 'https://gitee.com/billscofield/vim-go'
 let g:go_gopls_enabled = 0
 
+
 "Plugin 'Blackrush/vim-gocode'
-
-
-
 
 
 "缩进插件1
@@ -261,21 +269,14 @@ let g:indent_guides_guide_size=1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=red ctermbg=red
 
 
-
-
-
 "Plugin 'thaerkh/vim-indentguides'
 "let g:indentguides_spacechar = '┆'
 "let g:indentguides_tabchar = '|'
 
 
-
 "缩进线2
 "Bundle 'Yggdroot/indentLine'
 "let g:indentLine_color_term = 2
-
-
-
 
 
 " tagbar begin
@@ -301,9 +302,6 @@ let g:tagbar_vertical = 25
 let g:tagbar_show_linenumbers = 2
 
 
-" tagbar ends
-
-
 "Plugin 'vim-airline/vim-airline'
 Bundle 'https://gitee.com/billscofiled/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
@@ -317,10 +315,8 @@ Bundle 'https://gitee.com/billscofield/vim-multiple-cursors'
 " Plugin 'git://github.com/edkolev/tmuxline.vim.git'
 
 
-
 "Plugin 'mattn/webapi-vim'
 Bundle 'https://gitee.com/billscofield/webapi-vim'
-
 
 
 " Vue
@@ -329,13 +325,9 @@ Bundle 'https://gitee.com/billscofield/webapi-vim'
 " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 
-
-
-
 " 成对标签之间的跳转
 "Bundle 'vim-scripts/matchit.zip'
 Bundle 'https://gitee.com/billscofield/matchit.zip'
-
 
 
 " jinja
@@ -353,9 +345,6 @@ let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_import = 0
 
 
-
-
-
 "Bundle 'nvie/vim-flake8'
 "需要首先pip install autopep8
 "Bundle 'tell-k/vim-autopep8'
@@ -368,7 +357,6 @@ Bundle 'https://gitee.com/billscofield/vim-autopep8'
 "map <Leader><Leader>h <Plug>(easymotion-linebackward)
 
 
-
 "Plugin 'jlanzarotta/bufexplorer'
 Bundle 'https://gitee.com/billscofield/bufexplorer'
 
@@ -377,23 +365,20 @@ Bundle 'https://gitee.com/billscofield/bufexplorer'
 "Plugin 'neoclide/coc.nvim'
 
 
-
 Bundle 'https://gitee.com/billscofield/taglist.git'
-
-
-Bundle 'https://gitee.com/billscofield/vim-surround.git'
 
 
 " gitgutter
 Bundle 'https://gitee.com/billscofield/vim-gitgutter.git'
 
+
 " git -> fugitive
 Bundle 'https://gitee.com/billscofield/vim-fugitive.git'
-
-
 call vundle#end()
 
-filetype plugin indent on
+
+
+
 
 let g:ycm_semantic_triggers = {'css': [ 're!^\s{4}', 're!:\s+' ],}
 
@@ -419,6 +404,7 @@ set suffixes=.txt,.md,.js,.css,.vue
 " 背景色透明
 "hi Normal ctermfg=252 ctermbg=none
 
+
 " 输入的命令显示出来，看的清楚些  
 set showcmd         
 
@@ -439,16 +425,17 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " source 我的 .vimrc 配置文件
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+
 " 为标签内的文本快速添加双引号
 " nnoremap <leader>" vit<esc>a"<esc>hbi"<esc>le
-"
+
+
 " 重新加载当前文件
 nnoremap <leader>r :e %<cr>
 
+
 " 让 esc 不在起作用
 " inoremap <esc> <nop>
-
-
 
 
 " 自定义 emmet.vim 快捷键
@@ -532,9 +519,7 @@ set tags+=~/.vim/tags/systags
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-"iabbrev thta that
 iabbrev ssig ------------- <cr>Bill Scofield<cr>billscofield@126.com
-
 
 
 if exists("did_load_filetypes")
@@ -543,4 +528,3 @@ endif
 augroup filetype detect
     au! BufRead,BufNewFile *.tpp  setfiletype tpp
 augroup END
-
