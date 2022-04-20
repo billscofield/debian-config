@@ -222,5 +222,18 @@ export PATH=${PATH}:/opt/Postman
 export QTVER=6.2.2
 export QTDIR=/opt/Qt/
 export PATH=${QTDIR}${QTVER}/gcc_64/bin/:$PATH
-export PATH=${QTDIR}Tools/QtCreator/bin/:$PATH
+export PATH=${QTDIR}Tools/QtCreator/bin/:/opt/Qt/{QTVER}/gcc_64/bin:$PATH
 export LD_LIBRARY_PATH=${QTDIR}${QTVER}/gcc_64/lib/:$LD_LIBRARY_PATH
+
+alias code='code  --no-sandbox  --user-data-dir=/root/code'
+
+
+
+# java
+export JAVA_HOME=/opt/jdk1.8.0_321
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+
+export C_INCLUDE_PATH=/usr/include/gtk-3.0:/usr/include/at-spi2-atk/2.0:/usr/include/at-spi-2.0:/usr/include/dbus-1.0:/usr/lib/x86_64-linux-gnu/dbus-1.0/include:/usr/include/gtk-3.0:/usr/include/gio-unix-2.0:/usr/include/cairo:/usr/include/pango-1.0:/usr/include/fribidi:/usr/include/harfbuzz:/usr/include/atk-1.0:/usr/include/cairo:/usr/include/pixman-1:/usr/include/uuid:/usr/include/freetype2:/usr/include/libpng16:/usr/include/gdk-pixbuf-2.0:/usr/include/libmount:/usr/include/blkid:/usr/include/glib-2.0:/usr/lib/x86_64-linux-gnu/glib-2.0/include:$C_INCLUDE_PATH
