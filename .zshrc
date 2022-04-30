@@ -211,6 +211,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:/
 # postman
 export PATH=${PATH}:/opt/Postman
 
+# blender
+export PATH=${PATH}:/opt/blender
+
 
 
 # xterm
