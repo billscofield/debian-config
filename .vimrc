@@ -189,6 +189,10 @@ map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "Plugin 'honza/vim-snippets'
 
 
+
+Plugin 'https://gitee.com/billscofield/phpcomplete.vim.git'
+
+
 "Plugin 'marijnh/tern_for_vim'
 Bundle 'https://gitee.com/billscofield/tern_for_vim'
 
@@ -528,3 +532,4 @@ endif
 augroup filetype detect
     au! BufRead,BufNewFile *.tpp  setfiletype tpp
 augroup END
+set encoding=utf-8
