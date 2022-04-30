@@ -177,6 +177,16 @@ Bundle 'https://gitee.com/billscofield/auto-pairs'
 Bundle 'https://gitee.com/billscofield/vim-javascript'
 
 
+"gtk
+"Bundle 'https://gitee.com/billscofield/gtk-vim-syntax'
+
+let g:devhelpSearch=1
+let g:devhelpAssistant=1
+
+set tags+=/root/.vim/tags/gtk3
+set tags+=/root/.vim/tags/ctags
+
+
 "Plugin 'ycm-core/YouCompleteMe' 
 Bundle 'https://gitee.com/billscofield/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
