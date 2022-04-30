@@ -189,9 +189,15 @@ set tags+=/root/.vim/tags/ctags
 
 "Plugin 'ycm-core/YouCompleteMe' 
 Bundle 'https://gitee.com/billscofield/YouCompleteMe'
+set completeopt=longest,menu
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_global_ycm_extra_conf='/root/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_confirm_extra_conf = 0
+let g:always_populate_location_list = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_complete_in_comments = 1
+map <leader>gd:YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 
 
 "Plugin 'jsfaint/gen_tags.vim'
