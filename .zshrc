@@ -117,6 +117,19 @@ alias mv='mv -i'
 alias vi='vim'
 alias viu='vim -u NONE'
 ##alias j = 'autojump'
+#
+alias tmux='tmux -u'
+alias tls='tmux ls'
+alias tcs='tmux new -s'
+alias tka='tmux ls | cut -d: -f 1 | xargs -n1 tmux kill-session -t'
+
+function tmuxopen(){
+    tmux attach -t $1
+}
+
+function tmuxkill(){
+    tmux kill-session -t $1
+}
 
 #Bill vi
 set -o vi
@@ -179,7 +192,7 @@ eval "$(pyenv init --path)"
 
 eval "$(pyenv virtualenv-init -)"
 
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+#export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 export MYVIMRC=/root/.vimrc
 
@@ -219,6 +232,8 @@ export PATH=${PATH}:/opt/blender
 # xterm
 # xrdb -merge /git/debian-config/xtermconfig
 
+# node
+export PATH=/opt/node-v16.15.0-linux-x64/bin:$PATH
 
 
 # qt
