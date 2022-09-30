@@ -112,10 +112,13 @@ autocmd bufnewfile *.sh call HeaderSh()
 
 function HeaderPython()
     call setline(1, "#!/usr/bin/env python3")
-    call append(1, "#coding:utf-8")
+    call append(1, "# coding:utf-8")
     call append(2, "# Author: Bill Scofield")
     call append(3, "# Ctime: ".strftime('%Y-%m-%d',localtime()))
-    call append(4, "# Description:\t")
+    call append(4, "'''")
+    call append(5, "Description:")
+    call append(6, "'''")
+    call append(7, "")
     normal G
     normal o
     normal o

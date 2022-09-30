@@ -123,6 +123,9 @@ alias tls='tmux ls'
 alias tcs='tmux new -s'
 alias tka='tmux ls | cut -d: -f 1 | xargs -n1 tmux kill-session -t'
 
+
+alias code='code --no-sandbox --user-data-dir=/root/vscode'
+
 function tmuxopen(){
     tmux attach -t $1
 }
@@ -163,10 +166,16 @@ stty -ixon
 feh --bg-max /root/Downloads/nW3L1yZ-full-black-wallpaper.jpg
 
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+#export GTK_IM_MODULE=ibus
+#export XMODIFIERS=@im=ibus
+#export QT_IM_MODULE=ibus
 #export SDK_IM_MODULE=ibus
+
+
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx5
+
 
 #ibus-daemon -d -x
 # has to run ibus-daemon manually, 否则 urxvt 还是不能输入汉字
@@ -237,13 +246,21 @@ export PATH=/opt/node-v16.15.0-linux-x64/bin:$PATH
 
 
 # qt
-export QTVER=6.2.2
-export QTDIR=/opt/Qt/
-export PATH=${QTDIR}${QTVER}/gcc_64/bin/:$PATH
-export PATH=${QTDIR}Tools/QtCreator/bin/:/opt/Qt/{QTVER}/gcc_64/bin:$PATH
-export LD_LIBRARY_PATH=${QTDIR}${QTVER}/gcc_64/lib/:$LD_LIBRARY_PATH
+# export QTVER=6.2.2
+# export QTDIR=/opt/Qt/
+# export PATH=${QTDIR}${QTVER}/gcc_64/bin/:$PATH
+# export PATH=${QTDIR}Tools/QtCreator/bin/:/opt/Qt/{QTVER}/gcc_64/bin:$PATH
+# export LD_LIBRARY_PATH=${QTDIR}${QTVER}/gcc_64/lib/:$LD_LIBRARY_PATH
 
-alias code='code  --no-sandbox  --user-data-dir=/root/code'
+# alias code='code  --no-sandbox  --user-data-dir=/root/code'
+
+
+# pycharm
+
+PYCHARM_HOME=/opt/ide/pycharm/pycharm
+export PATH=$PATH:${PYCHARM_HOME}/bin
+
+
 
 
 
