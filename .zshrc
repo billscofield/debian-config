@@ -265,7 +265,8 @@ export PATH=$PATH:${PYCHARM_HOME}/bin
 
 
 # java
-export JAVA_HOME=/opt/jdk1.8.0_321
+#export JAVA_HOME=/opt/jdk1.8.0_321
+export JAVA_HOME=/opt/jdk
 export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export PATH=$JAVA_HOME/bin:$PATH
 
