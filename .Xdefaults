@@ -23,7 +23,7 @@ URxvt.colorBD: #Gray95
 URxvt*cursorBlink: false
 URxvt*cursorColor: #fff
 
-URxvt*geometry: 70x19
+URxvt*geometry: 220x50
 
 !#----------------------------------------------------------------------
 

@@ -134,6 +134,39 @@ set rtp+=/root/.vim/bundle/Vundle.vim
 
 
 
+" coc.begin
+
+set updatetime=100
+
+
+" 配置 tabl 键补全
+inoremap <silent><expr> <TAB>
+    \ coc#pum#visible() ? coc#pum#next(1) :
+    \ CheckBackspace() ? "\<Tab>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+    let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
+
+" coc.end
+
 
 
 
@@ -155,7 +188,6 @@ Bundle 'https://gitee.com/billscofield/vundle.vim.git'
 "Plugin 'suan/vim-instant-markdown'
 "let g:mkdp_path_to_chrome="google-chrome"
 "let g:instant_markdown_autostart = 0
-
 
 "Plugin 'iamcco/markdown-preview.vim'
 
@@ -191,15 +223,21 @@ set tags+=/root/.vim/tags/ctags
 
 
 "Plugin 'ycm-core/YouCompleteMe' 
-Bundle 'https://gitee.com/billscofield/YouCompleteMe'
-set completeopt=longest,menu
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_global_ycm_extra_conf='/root/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-let g:always_populate_location_list = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_complete_in_comments = 1
-map <leader>gd:YcmCompleter GoToDefinitionElseDeclaration<CR>
+"Bundle 'https://gitee.com/billscofield/YouCompleteMe'
+"set completeopt=longest,menu
+"let g:ycm_autoclose_preview_window_after_completion=1
+"let g:ycm_global_ycm_extra_conf='/root/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf = 0
+"let g:always_populate_location_list = 1
+"let g:ycm_seed_identifiers_with_syntax = 1
+"let g:ycm_complete_in_comments = 1
+"map <leader>gd:YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+Bundle 'neoclide/coc.nvim', {'branch': 'release'}
+
+Bundle 'prettier/vim-prettier'
+let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
 
 
@@ -279,13 +317,13 @@ let g:go_gopls_enabled = 0
 
 "缩进插件1
 "Plugin 'nathanaelkane/vim-indent-guides'
-Bundle 'https://gitee.com/billscofield/vim-indent-guides'
+"1Bundle 'https://gitee.com/billscofield/vim-indent-guides'
 " to have indent guides enabled by default
-let g:indent_guides_enable_on_vim_startup = 1
+"#1let g:indent_guides_enable_on_vim_startup = 1
 " 从第2层开始可视化显示缩进
-let g:indent_guides_start_level=2
+"#1let g:indent_guides_start_level=2
 " 色块宽度
-let g:indent_guides_guide_size=1
+"#1let g:indent_guides_guide_size=1
 " # 设定基数列和偶数列的缩进线颜色
 "let g:indent_guides_auto_colors = 0
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=white ctermbg=white
@@ -298,8 +336,10 @@ let g:indent_guides_guide_size=1
 
 
 "缩进线2
-"Bundle 'Yggdroot/indentLine'
+Bundle 'Yggdroot/indentLine'
+let g:indent_guides_guide_size = 1
 "let g:indentLine_color_term = 2
+let g:indent_guides_start_level = 2
 
 
 " tagbar begin

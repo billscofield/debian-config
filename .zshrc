@@ -117,6 +117,7 @@ alias mv='mv -i'
 alias vi='vim'
 alias viu='vim -u NONE'
 ##alias j = 'autojump'
+alias reboot='echo "think twice"'
 #
 alias tmux='tmux -u'
 alias tls='tmux ls'
@@ -224,8 +225,8 @@ export GOPROXY=https://mirrors.aliyun.com/goproxy/
 
 
 #export PATH=$PATH:/usr/local/nodejs/node-v13.12.0-linux-x64/bin:/opt/go/bin/
-export NODEPATH=/opt/node-v14.18.1-linux-x64/bin/
-export PATH=$PATH:${NODEPATH}
+export NODEPATH=/opt/node/bin/
+export PATH=${NODEPATH}:$PATH
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:/usr/local/shell_self"
@@ -242,7 +243,7 @@ export PATH=${PATH}:/opt/blender
 # xrdb -merge /git/debian-config/xtermconfig
 
 # node
-export PATH=/opt/node-v16.15.0-linux-x64/bin:$PATH
+#export PATH=/opt/node-v16.15.0-linux-x64/bin:$PATH
 
 
 # qt
