@@ -18,7 +18,7 @@ URxvt*saveLines:12000
 
 
 URxvt.depth: 32
-URxvt.colorBD: #Gray95
+URxvt.colorBD: pink
 
 URxvt*cursorBlink: false
 URxvt*cursorColor: #fff
@@ -27,6 +27,7 @@ URxvt*geometry: 220x50
 
 !#----------------------------------------------------------------------
 
+URxvt.perl-ext-common: resize-font
 !## 复制粘贴
 !#URxvt.clipboard.autocopy: false
 !#URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
@@ -50,6 +51,7 @@ URxvt.iso14755_52: false
 ! 一定要写全名及大写的C/V,否则无效
 ! Shift/Control 顺序无关
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+! URxvt.perl-ext-common: default,clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 
@@ -70,17 +72,17 @@ URxvt.background:[70]#000000
 URxvt.foreground:#ffffff
 
 !# 貌似不管用啊
-URxvt.keysym.C-minus:     resize-font:smaller
-URxvt.keysym.C-plus:      resize-font:bigger
-URxvt.keysym.C-equal:     resize-font:reset
+!URxvt.keysym.C-minus:     resize-font:smaller
+!URxvt.keysym.C-plus:      resize-font:bigger
+!URxvt.keysym.C-equal:     resize-font:reset
 
 URxvt.url-select.underline: true
 URxvt.url-select.launcher: chromium
 
 
 
-URxvt*internalBorder:1
-URxvt*externalBorder:	-1
+URxvt*internalBorder: 1
+URxvt*externalBorder: -1
 
 !# scrollbar - true (default) or false
 URxvt*scrollBar: true
@@ -91,7 +93,7 @@ URxvt*scrollBar_right: true
 !# scrollbar style - rxvt (default), plain, next, or xterm
 URxvt*scrollstyle: rxvt
 
-URxvt.scrollBar_floating:True
+URxvt.scrollBar_floating: True
 
 
 
@@ -99,9 +101,41 @@ URxvt.scrollBar_floating:True
 
 Xft.dpi:96
 !URxvt.font:xft:Bitstream Vera Sans Mono-9,xft:Microsoft Yahei:pixelsize=9
-URxvt.font:xft:Bitstream Vera Sans Mono-9:size=9,xft:Microsoft Yahei:pixelsize=14
+!#URxvt.font:xft:Bitstream Vera Sans Mono-9:size=9,xft:Microsoft Yahei:pixelsize=14
+!#URxvt.font:xft:JetBrains Mono Regular Nerd Font Complete:size=9
+!URxvt.font:xft:Bitstream Vera Sans Mono-9,xft:Microsoft Yahei:pixelsize=9
+!URxvt.font:xft:JetBrainsMono Nerd Font:style=Regular,Italic,SemiBold,Bold,ExtraBold:size=8,xft:Microsoft YaHei,微软雅黑:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta:size=8
+!URxvt.font:xft:JetBrainsMono Nerd Font Mono:style=Regular:size=10,xft:Microsoft YaHei,微软雅黑:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta:size=10
+!
+!URxvt.font:xft:JetBrainsMono Nerd Font Mono:style=Regular:size=10,xft:Microsoft YaHei,微软雅黑:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta:size=10
+
+
+!URxvt.font:xft:JetBrainsMono Nerd Font Mono:style=Light Italic,Italic:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=ExtraLight Italic,Italic:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=SemiBold,Regular:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=Thin Italic,Italic:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=ExtraBold,Regular:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=ExtraBold Italic,Italic:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=Bold Italic:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=Italic:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=Light,Regular:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=Medium,Regular:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=Thin,Regular:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=SemiBold Italic,Italic:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=ExtraLight,Regular:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=Medium Italic,Italic:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=Regular:size=10,
+!xft: JetBrainsMono Nerd Font Mono:style=Bold:size=10, xft:Microsoft YaHei,微软雅黑:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta:size=10
+
+
+!URxvt.font: xft: JetBrainsMono Nerd Font Mono:style=Regular:size=10, xft:Microsoft YaHei,微软雅黑:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta:size=10
+URxvt.font: xft: JetBrainsMono NF:style=Regular:size=9.5, xft:Microsoft YaHei,微软雅黑:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta:size=10
+
+!Regular,Light Italic,Italic,ExtraLight Italic,Italic, SemiBold,Regular ,Thin Italic,Italic ,ExtraBold,Regular ,ExtraBold Italic,Italic ,Bold Italic ,Italic ,Light,Regular ,Medium,Regular ,Thin,Regular ,SemiBold Italic,Italic ,ExtraLight,Regular ,Medium Italic,Italic ,Bold
+
 !URxvt.boldFont:xft:Bitstream Vera Sans Mono-9:Bold,xft:Microsoft Yahei:pixelsize=9:Bold
-URxvt.boldFont:xft:Bitstream Vera Sans Mono-9:Bold:size=9,xft:Microsoft Yahei:pixelsize=14:Bold
+!
+!#URxvt.boldFont:xft:Bitstream Vera Sans Mono-9:Bold:size=9,xft:Microsoft Yahei:pixelsize=14:Bold
 
 !URxvt*font: xft: Font Mono:Semibold:size=12.5,xft:WenQuanYi Micro Hei Mono Light: size=12.5,xft:Font Awesome 5 Free:size=12.5
 !URxvt*boldFont:xft:SauceCodePro Nerd Font Mono:Semibold:size=12.5,xft:WenQuanYi Micro Hei Mono Light: size=12.5,xft:Font Awesome 5 Free:size=12.5

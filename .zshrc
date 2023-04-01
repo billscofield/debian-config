@@ -9,7 +9,7 @@ echo "~/.zshrc"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="steeef" # set by `omz`
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -119,13 +119,14 @@ alias viu='vim -u NONE'
 ##alias j = 'autojump'
 alias reboot='echo "think twice"'
 #
-alias tmux='tmux -u'
-alias tls='tmux ls'
+#alias tmux='tmux -u'
+#alias tls='tmux ls'
 alias tcs='tmux new -s'
 alias tka='tmux ls | cut -d: -f 1 | xargs -n1 tmux kill-session -t'
 
 
 alias code='code --no-sandbox --user-data-dir=/root/vscode'
+alias tmux='tmux -u'
 
 function tmuxopen(){
     tmux attach -t $1
@@ -194,7 +195,8 @@ autoload -U compinit && compinit -u
 
 export PATH=$PATH:/usr/sbin
 
-export PATH=/usr/sbin:/usr/local/vimPython3/bin/:$PATH
+#export PATH=/usr/sbin:/usr/local/vimPython3/bin/:$PATH
+export PATH=/usr/sbin:/usr/local/vim9/bin:$PATH
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -220,7 +222,7 @@ export PYTHON_CONFIGURE_OPTS="--enable-shared"
 export GOPATH=/opt/go/bin/
 export PATH=$PATH:${GOPATH}
 # internal speed-up
-export GOPROXY=https://mirrors.aliyun.com/goproxy/
+# export GOPROXY=https://mirrors.aliyun.com/goproxy/
 
 
 
@@ -273,5 +275,18 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 
 
+# php
+export PATH=/usr/local/php/bin:$PATH
+
+
+
 export C_INCLUDE_PATH=/usr/include/gtk-3.0:/usr/include/at-spi2-atk/2.0:/usr/include/at-spi-2.0:/usr/include/dbus-1.0:/usr/lib/x86_64-linux-gnu/dbus-1.0/include:/usr/include/gtk-3.0:/usr/include/gio-unix-2.0:/usr/include/cairo:/usr/include/pango-1.0:/usr/include/fribidi:/usr/include/harfbuzz:/usr/include/atk-1.0:/usr/include/cairo:/usr/include/pixman-1:/usr/include/uuid:/usr/include/freetype2:/usr/include/libpng16:/usr/include/gdk-pixbuf-2.0:/usr/include/libmount:/usr/include/blkid:/usr/include/glib-2.0:/usr/lib/x86_64-linux-gnu/glib-2.0/include
+
+
+
+#cuda
+
+CUDA_PATH=/usr/local/cuda/
+export PATH=${CUDA_PATH}/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
